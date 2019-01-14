@@ -60,6 +60,7 @@ function SWEP:PrimaryAttack()
 			local itemTable = Clockwork.item:GetByWeapon(self);
 
 			if (itemTable and itemTable:Open(self.Owner) != false) then
+				self.Owner:SelectWeapon("cw_hands");
 				self.Owner:StripWeapon("cw_ration");
 			end;
 		end);
