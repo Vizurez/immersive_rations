@@ -76,7 +76,7 @@ function SWEP:Holster(weapon)
 	end;
 
 	Clockwork.player:DropWeapon(self.Owner, "cw_ration");
-	player:SelectWeapon(weapon);
+	self.Owner:SelectWeapon(weapon);
 end;
 
 function SWEP:CanSecondaryAttack() return false; end;
