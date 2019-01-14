@@ -60,17 +60,23 @@ function SWEP:PrimaryAttack()
 			local itemTable = Clockwork.item:GetByWeapon(self);
 
 			if (itemTable and itemTable:Open(self.Owner) != false) then
-				self.Owner:SelectWeapon("cw_hands");
 				self.Owner:StripWeapon("cw_ration");
 			end;
 		end);
 	end;
 end;
 
-function SWEP:Holster()
+function SWEP:Holster(weapon)
 	if (!IsFirstTimePredicted()) then return; end;
+	
+	if (weapon) then
+		weapon = weapon:GetClass();
+	else
+		weapon = "cw_hands";
+	end;
 
 	Clockwork.player:DropWeapon(self.Owner, "cw_ration");
+	player:SelectWeapon(weapon);
 end;
 
 function SWEP:CanSecondaryAttack() return false; end;
