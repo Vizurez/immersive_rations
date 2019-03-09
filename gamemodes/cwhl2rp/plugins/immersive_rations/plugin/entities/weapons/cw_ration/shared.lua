@@ -66,14 +66,8 @@ function SWEP:PrimaryAttack()
 	end;
 end;
 
-function SWEP:Holster(weapon)
+function SWEP:Holster()
 	if (!IsFirstTimePredicted()) then return; end;
-	
-	if (weapon) then
-		weapon = weapon:GetClass();
-	else
-		weapon = "cw_hands";
-	end;
 
 	Clockwork.player:Notify(self.Owner, "You have dropped your ration!");
 	Clockwork.player:DropWeapon(self.Owner, "cw_ration");
