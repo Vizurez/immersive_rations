@@ -5,6 +5,11 @@
 
 local ITEM = Clockwork.item:FindByID("ration");
 
+if (!ITEM) then
+	debug.Trace(); -- Server does not have item installed.
+	return;
+end;
+
 ITEM.Open = ITEM.OnUse;
 ITEM.OnUse = nil;
 ITEM.useText = nil;
