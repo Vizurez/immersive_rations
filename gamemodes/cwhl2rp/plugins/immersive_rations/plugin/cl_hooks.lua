@@ -1,7 +1,7 @@
 local PLUGIN = PLUGIN;
 
 function PLUGIN:DrawTargetPlayerStatus(target, alpha, x, y)
-	local informationColor = cwOption:GetColor("information");
+	local informationColor = Clockwork.option:GetColor("information");
 	local action = Clockwork.player:GetAction(target);
 	
 	if (target:Alive()) then
